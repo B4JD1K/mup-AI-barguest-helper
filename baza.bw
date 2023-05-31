@@ -1,0 +1,487 @@
+        knowledge base nazwa
+ facets
+	ask yes;
+    	single yes;
+    drinki:
+
+val oneof {
+    "Aperol Spritz",
+    "Bahama Mama",
+    "Bellini",
+    "Caipirinha",
+    "Cosmopolitan",
+    "Corpse Reviver",
+    "Daiquiri",
+    "Dark 'N' Stormy",
+    "Espresso Martini",
+    "French 75",
+    "Fuzzy Navel",
+    "Gimlet",
+    "Gin and Tonic",
+    "Harvey Wallbanger",
+    "Hot Toddy",
+    "Irish Coffee",
+    "Jagerbomb",
+    "Kamikaze",
+    "Lemon Drop",
+    "Mai Tai",
+    "Margarita",
+    "Negroni",
+    "Old Fashioned",
+    "Pina Colada",
+    "Popros barmana o bezalkoholowe piwo lub soft drinka",
+    "Prairie Fire",
+    "Quick Fuck",
+    "Quaalude",
+    "Rum and Coke",
+    "Rusty Nail",
+    "Screwdriver",
+    "Sex on the Beach",
+    "Tequila Sunrise",
+    "Tom Collins",
+    "U-Boot",
+    "Vampiro",
+    "Vodka Martini",
+    "Whiskey Sour",
+    "Zombie",
+    "Mint Julep",
+    "Hurricane",
+    "Mojito",    
+    "White Russian",    
+    "Martini",    
+    "Caipiroska",    
+    "Mimosa",    
+    "Black Russian",    
+    "Blue Lagoon",    
+    "Cuba Libre",    
+    "Long Island Iced Tea",    
+    "Sour Apple Martini",    
+    "Whiskey Smash",    
+    "Black Velvet"
+
+    //    brak drinka o parametrach ponizej
+    //
+    //    rodzaj = "koktajl",
+    //    baza = "wodka",
+    //    smak = "kwasny";
+
+    }
+    	picture {
+    "Aperol Spritz.jpg",
+    "Bahama Mama.jpg",
+    "Bellini.jpg",
+    "Caipirinha.jpg",
+    "Cosmopolitan.jpg",
+    "Corpse Reviver.jpg",
+    "Daiquiri.jpg",
+    "Dark 'N' Stormy.jpg",
+    "Espresso Martini.jpg",
+    "French 75.jpg",
+    "Fuzzy Navel.jpg",
+    "Gimlet.jpg",
+    "Gin and Tonic.jpg",
+    "Harvey Wallbanger.jpg",
+    "Hot Toddy.jpg",
+    "Irish Coffee.jpg",
+    "Jagerbomb.jpg",
+    "Kamikaze.jpg",
+    "Lemon Drop.jpg",
+    "Mai Tai.jpg",
+    "Margarita.jpg",
+    "Negroni.jpg",
+    "Old Fashioned.jpg",
+    "Pina Colada.jpg",
+    "Popros barmana o bezalkoholowe piwo lub soft drinka.jpg",
+    "Prairie Fire.jpg",
+    "Quick Fuck.jpg",
+    "Quaalude.jpg",
+    "Rum and Coke.jpg",
+    "Rusty Nail.jpg",
+    "Screwdriver.jpg",
+    "Sex on the Beach.jpg",
+    "Tequila Sunrise.jpg",
+    "Tom Collins.jpg",
+    "U-Boot.jpg",
+    "Vampiro.jpg",
+    "Vodka Martini.jpg",
+    "Whiskey Sour.jpg",
+    "Zombie.jpg",
+    "Mint Julep.jpg",
+    "Hurricane.jpg",
+    "Mojito.jpg",    
+    "White Russian.jpg",    
+    "Martini.jpg",    
+    "Caipiroska.jpg",    
+    "Mimosa.jpg",    
+    "Black Russian.jpg",    
+    "Blue Lagoon.jpg",    
+    "Cuba Libre.jpg",    
+    "Long Island Iced Tea.jpg",    
+    "Sour Apple Martini.jpg",    
+    "Whiskey Smash.jpg",    
+    "Black Velvet.jpg"
+
+};
+
+    trzezwy:
+    query "B Jestes trzezwy?:"
+    val oneof { "tak, jestem trzezwy",
+            "nie, pilem juz"
+};
+
+    rodzaj:
+    query "B Czego się dzis napijesz?:"
+    val oneof { "shot",
+            "koktajl"
+};
+
+	
+    baza:
+    query "B Jaka baza? :"
+    val oneof { "wodka",
+            "rum",
+            "tequilla",
+            "whiskey",
+            "likier"
+};
+
+		    
+    smak:
+    query "B Wybierz preferowany smak:"
+    val oneof { "gorzki",
+        "slodki",
+        "kwasny",
+        "owocowy",
+        "ziolowy"
+       
+};
+
+ end;
+ rules
+ drinki = "Popros barmana o bezalkoholowe piwo lub soft drinka" if
+        trzezwy = "nie, pilem juz"
+    ;
+
+drinki = "Aperol Spritz" if
+        rodzaj = "koktajl",
+        baza = "likier", 
+        smak = "gorzki"
+    ;
+
+drinki = "Bahama Mama" if
+        rodzaj = "koktajl",
+        baza = "rum", 
+        smak = "owocowy"
+    ;
+
+drinki = "Bellini" if
+        rodzaj = "koktajl",
+        baza = "likier", 
+        smak = "owocowy"
+    ;
+
+drinki = "Caipirinha" if
+        rodzaj = "koktajl",
+        baza = "tequilla", 
+        smak = "kwasny"
+    ;
+
+drinki = "Cosmopolitan" if
+        rodzaj = "koktajl",
+        baza = "wodka", 
+        smak = "kwasny"
+    ;
+
+drinki = "Corpse Reviver" if
+        rodzaj = "koktajl",
+        baza = "wodka", 
+        smak = "ziolowy"
+    ;
+
+drinki = "Daiquiri" if
+        rodzaj = "koktajl",
+        baza = "rum", 
+        smak = "owocowy"
+    ;
+
+drinki = "Dark 'N' Stormy" if
+        rodzaj = "koktajl",
+        baza = "rum", 
+        smak = "kwasny"
+    ;
+
+drinki = "Espresso Martini" if
+        rodzaj = "koktajl",
+        baza = "wodka", 
+        smak = "gorzki"
+    ;
+
+drinki = "French 75" if
+        rodzaj = "koktajl",
+        baza = "wodka", 
+        smak = "kwasny"
+    ;
+
+drinki = "Fuzzy Navel" if
+        rodzaj = "koktajl",
+        baza = "rum", 
+        smak = "owocowy"
+    ;
+
+drinki = "Gimlet" if
+        rodzaj = "koktajl",
+        baza = "wodka", 
+        smak = "gorzki"
+    ;
+
+drinki = "Gin and Tonic" if
+        rodzaj = "koktajl",
+        baza = "wodka", 
+        smak = "gorzki"
+    ;
+
+drinki = "Harvey Wallbanger" if
+        rodzaj = "koktajl",
+        baza = "wodka", 
+        smak = "owocowy"
+    ;
+
+drinki = "Hot Toddy" if
+        rodzaj = "koktajl",
+        baza = "whiskey", 
+        smak = "ziolowy"
+    ;
+
+drinki = "Irish Coffee" if
+        rodzaj = "koktajl",
+        baza = "whiskey", 
+        smak = "gorzki"
+    ;
+
+drinki = "Jagerbomb" if
+        rodzaj = "shot",
+        baza = "likier", 
+        smak = "ziolowy"
+    ;
+
+drinki = "Kamikaze" if
+        rodzaj = "shot",
+        baza = "wodka", 
+        smak = "kwasny"
+    ;
+
+drinki = "Lemon Drop" if
+        rodzaj = "shot",
+        baza = "wodka", 
+        smak = "kwasny"
+    ;
+
+drinki = "Mai Tai" if
+        rodzaj = "koktajl",
+        baza = "rum", 
+        smak = "owocowy"
+    ;
+
+drinki = "Margarita" if
+        rodzaj = "koktajl",
+        baza = "tequilla", 
+        smak = "kwasny"
+    ;
+
+drinki = "Negroni" if
+        rodzaj = "koktajl",
+        baza = "wodka", 
+        smak = "gorzki"
+    ;
+
+drinki = "Old Fashioned" if
+        rodzaj = "koktajl",
+        baza = "whiskey", 
+        smak = "gorzki"
+    ;
+
+drinki = "Pina Colada" if
+        rodzaj = "koktajl",
+        baza = "rum", 
+        smak = "owocowy"
+    ;
+
+drinki = "Prairie Fire" if
+        rodzaj = "shot",
+        baza = "tequilla", 
+        smak = "kwasny"
+    ;
+
+drinki = "Quick Fuck" if
+        rodzaj = "shot",
+        baza = "likier", 
+        smak = "slodki"
+    ;
+
+drinki = "Quaalude" if
+        rodzaj = "shot",
+        baza = "likier", 
+        smak = "slodki"
+    ;
+
+drinki = "Rum and Coke" if
+        rodzaj = "koktajl",
+        baza = "rum", 
+        smak = "slodki"
+    ;
+
+drinki = "Rusty Nail" if
+        rodzaj = "koktajl",
+        baza = "whiskey", 
+        smak = "gorzki"
+    ;
+
+drinki = "Screwdriver" if
+        rodzaj = "koktajl",
+        baza = "wodka", 
+        smak = "owocowy"
+    ;
+
+drinki = "Sex on the Beach" if
+        rodzaj = "koktajl",
+        baza = "wodka", 
+        smak = "owocowy"
+    ;
+
+drinki = "Tequila Sunrise" if
+        rodzaj = "koktajl",
+        baza = "tequilla", 
+        smak = "owocowy"
+    ;
+
+drinki = "Tom Collins" if
+        rodzaj = "koktajl",
+        baza = "wodka", 
+        smak = "kwasny"
+    ;
+
+drinki = "U-Boot" if
+        rodzaj = "shot",
+        baza = "wodka", 
+        smak = "kwasny"
+    ;
+
+drinki = "Vampiro" if
+        rodzaj = "koktajl",
+        baza = "tequilla", 
+        smak = "owocowy"
+    ;
+
+drinki = "Vodka Martini" if
+        rodzaj = "koktajl",
+        baza = "wodka", 
+        smak = "gorzki"
+    ;
+
+drinki = "Whiskey Sour" if
+        rodzaj = "koktajl",
+        baza = "whiskey", 
+        smak = "kwasny"
+    ;
+
+drinki = "Zombie" if
+        rodzaj = "koktajl",
+        baza = "rum", 
+        smak = "owocowy"    ;
+
+drinki = "Mint Julep" if
+        rodzaj = "koktajl",
+        baza = "whiskey",
+        smak = "ziolowy";
+
+drinki = "Hurricane" if
+        rodzaj = "koktajl",
+        baza = "rum",
+        smak = "owocowy";
+
+drinki = "Mojito" if
+        rodzaj = "koktajl",
+        baza = "rum",
+        smak = "ziolowy";
+
+drinki = "White Russian" if
+        rodzaj = "koktajl",
+        baza = "wodka",
+        smak = "slodki";
+
+drinki = "Martini" if
+        rodzaj = "koktajl",
+        baza = "wodka",
+        smak = "gorzki";
+
+drinki = "Caipiroska" if
+        rodzaj = "koktajl",
+        baza = "wodka",
+        smak = "kwasny";
+
+drinki = "Mimosa" if
+        rodzaj = "koktajl",
+        baza = "wodka",
+        smak = "owocowy";
+
+drinki = "Black Russian" if
+        rodzaj = "koktajl",
+        baza = "wodka",
+        smak = "gorzki";
+
+drinki = "Blue Lagoon" if
+        rodzaj = "koktajl",
+        baza = "wodka",
+        smak = "owocowy";
+
+drinki = "Cuba Libre" if
+        rodzaj = "koktajl",
+        baza = "rum",
+        smak = "kwasny";
+
+drinki = "Long Island Iced Tea" if
+        rodzaj = "koktajl",
+        baza = "wodka",
+        smak = "kwasny";
+
+drinki = "Sour Apple Martini" if
+        rodzaj = "koktajl",
+        baza = "wodka",
+        smak = "kwasny";
+
+drinki = "Whiskey Smash" if
+        rodzaj = "koktajl",
+        baza = "whiskey",
+        smak = "owocowy";
+
+drinki = "Black Velvet" if
+        rodzaj = "koktajl",
+        baza = "whiskey",
+        smak = "gorzki";
+ 
+ end;
+ control
+   setSysText( problem, "Asystent Barmana" );
+   setSysText( notConfirmed, "Brak pozycji o podanych parametrach w naszym menu" );
+   setWindowPos( ask, 10, 40, 400, 300, 0 );
+   setWindowPos( picture_ask, 420, 40, 350, 300, 0 );
+   setWindowPos( solution, 10, 40, 400, 300, 0 );
+   setWindowPos( picture_solution, 420, 40, 800, 300, 1 );
+   setWindowPos( what_is, 10, 440, 780, 200, 0 );
+   run;
+   setAppWinTitle("Asystent Barmana");
+   createAppWindow;
+   vignette("Asystent Barmana","Autorzy: Bartlomiej Noworyta, Filip Noras, Konrad Gwozdz",
+               "Projekt z SI, MUP Oswiecim 2023");
+   menu "Asystent Barmana"
+   1. "Nowa propozycja"
+   2. "Wyjdz"
+   case 1:
+     goal( "drinki = X" );
+     delNewFacts;
+   case 2:
+     exit;
+   end;
+ end;
+end;
+
